@@ -3,6 +3,7 @@ module Main where
 import Day01.Day01 as Day01
 import Day02.Day02 as Day02
 import Day03.Day03 as Day03
+import Day04.Day04 as Day04
 import System.Environment (getArgs)
 
 main :: IO ()
@@ -14,7 +15,7 @@ main = do
   putStrLn output
 
 defaultDay :: (Int, Int)
-defaultDay = (3, 1)
+defaultDay = (4, 1)
 
 dayAndPart :: [String] -> (Int, Int)
 dayAndPart [day, part] = (read day, read part)
@@ -27,6 +28,8 @@ solve 2 1 = Day02.part1
 solve 2 2 = Day02.part2
 solve 3 1 = Day03.part1
 solve 3 2 = Day03.part2
+solve 4 1 = Day04.part1
+solve 4 2 = Day04.part2
 solve _ _ = uncurry solve defaultDay
 
 numToString :: Int -> String
