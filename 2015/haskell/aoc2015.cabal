@@ -56,9 +56,11 @@ executable aoc2015
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.0.0, containers
+    build-depends:    base ^>=4.17.0.0, 
+                      containers ^>=0.7, 
+                      mtl ^>=2.3.1
 
-    other-modules:    Day01.Day01 Day02.Day02 Day03.Day03 Day04.Day04 Day05.Day05 Day06.Day06
+    other-modules:    Day01.Day01 Day02.Day02 Day03.Day03 Day04.Day04 Day05.Day05 Day06.Day06 Day07.Day07
 
     -- Directories containing source files.
     hs-source-dirs:   app
