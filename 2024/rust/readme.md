@@ -10,9 +10,21 @@ This year I'll be doing it in rust again.
 
 ### How to run:
 
-Use ``cargo run`` to run the newest solution,
-or use ``cargo run -- --day=1 --part=1`` or ``cargo run -- -d1 -p1`` to run a specific day and part,
-Use ``cargo run -- --all`` to run all days and see how fast they all get solved.
+Use ``cargo run -- -h`` to see all options.
+
+Use ``cargo run -- --day=1 --part=1 solve`` or ``cargo run -- -d1 -p1`` to run a specific day and part,
+
+Use ``cargo run -- all`` to run all days and see how fast they all get solved.
+
+When day isn't specified or 0 it will default to the current day of the month but only in december.
+
+Use ``cargo run -- -d1 fetch-input`` to get the input and load it in the correct place.
+
+To use fetch input you must have a `.env` file in the root folder containing a session token, you can get one by searching through the requests under the network tab in your browser (I don't know about a better method).
+
+```env
+SESSION="your_token_here"
+```
 
 The cli will also tell you how long it took to run the code, and if it was on debug or release mode
 

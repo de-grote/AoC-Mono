@@ -1,7 +1,9 @@
-use clap::Parser;
+use chrono::Datelike;
+use clap::{Parser, Subcommand};
 use itertools::Itertools;
 use std::{
-    fs::read_to_string,
+    fs::{self, read_to_string},
+    io::Write,
     path::PathBuf,
     time::{Duration, Instant},
 };
@@ -31,12 +33,30 @@ macro_rules! solution {
 }
 
 fn main() {
+    dotenvy::dotenv().expect("couldn't load env");
+
     let cli = Cli::parse();
 
-    let (result, duration) = if cli.all {
-        run_all()
+    let now = chrono::Local::now();
+
+    let day = if cli.day != 0 {
+        cli.day
+    } else if now.month() == 12 {
+        now.day() as u8
     } else {
-        get_solution(cli.day, cli.part)
+        panic!("can only automatically get date in december")
+    };
+    let part = cli.part;
+
+    let (result, duration) = match cli.subcommand.unwrap_or_default() {
+        Commands::Solve => get_solution(day, part),
+        Commands::All => run_all(),
+        Commands::FetchInput => {
+            let start = Instant::now();
+            fetch_input(day);
+            let end = Instant::now();
+            (format!("downloaded the file for day {}", day), end - start)
+        }
     };
 
     println!();
@@ -46,7 +66,7 @@ fn main() {
     #[cfg(debug_assertions)]
     println!("on debug mode");
     #[cfg(not(debug_assertions))]
-    println!("on release mode")
+    println!("on release mode");
 }
 
 fn get_solution(day: u8, part: u8) -> (String, Duration) {
@@ -88,14 +108,51 @@ fn run_all() -> (String, Duration) {
     (result, time)
 }
 
+fn fetch_input(day: u8) {
+    let session = std::env::var("SESSION").expect("no session token in env");
+    let mut buf = vec![];
+    ureq::get(&format!("https://adventofcode.com/2024/day/{day}/input"))
+        .set("Cookie", &format!("session={}", session))
+        .call()
+        .expect("couldn't reach aoc server")
+        .into_reader()
+        .read_to_end(&mut buf)
+        .expect("couldn't convert input to string");
+    let day_str = day_to_string(day);
+    fs::create_dir_all(format!("src/day{}", day_str))
+        .expect("couldnt create directory in src folder");
+    let mut file =
+        fs::File::create(format!("src/day{}/input.txt", day_str)).expect("couldn't create file");
+    file.write_all(&buf).expect("couldn't write file");
+}
+
+fn day_to_string(day: u8) -> String {
+    if day <= 9 {
+        format!("0{}", day)
+    } else {
+        day.to_string()
+    }
+}
+
 /// aoc 2024 cli
 #[derive(Parser, Debug)]
-#[command(name = "aoc2024", author, version, long_about = None)]
+#[command(name = "aoc2024", author, version, long_about = None, subcommand_required = false)]
 struct Cli {
-    #[arg(short, long, default_value_t = 1)]
+    #[arg(short, long, default_value_t = 0)]
     pub day: u8,
     #[arg(short, long, default_value_t = 1)]
     pub part: u8,
-    #[arg(short, long, exclusive = true)]
-    pub all: bool,
+    #[command(subcommand)]
+    pub subcommand: Option<Commands>,
+}
+
+#[derive(Debug, Subcommand, Default)]
+enum Commands {
+    #[default]
+    /// solve a day
+    Solve,
+    /// fetch input and load it in
+    FetchInput,
+    /// solve all days
+    All,
 }
