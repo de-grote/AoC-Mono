@@ -33,7 +33,7 @@ macro_rules! solution {
 }
 
 fn main() {
-    dotenvy::dotenv().expect("couldn't load env");
+    let _ = dotenvy::dotenv();
 
     let cli = Cli::parse();
 
