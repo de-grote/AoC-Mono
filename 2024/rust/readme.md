@@ -38,7 +38,7 @@ this does require the [cargo watch](https://crates.io/crates/cargo-watch) crate.
 
 A bit of text describing my experience with creating a solution for a specific day.
 
-* day 0: there is nothing here yet...
+* day 1: I accidentally pasted some code into the testcase which caused the parser to give a partial result, which lost me a lot of time today. Skill issue.
 
 ---
 
