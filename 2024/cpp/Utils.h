@@ -17,6 +17,19 @@ public:
         }
         return tokens;
     }
+
+    template<typename T>
+    static void printVec(const std::vector<T> &vec) {
+        std::cout << '[';
+        if (!vec.empty()) {
+            std::cout << vec[0];
+        }
+        for (int i = 1; i < vec.size(); i++) {
+            std::cout << ',';
+            std::cout << vec[i];
+        }
+        std::cout << "]\n";
+    }
 };
 
 

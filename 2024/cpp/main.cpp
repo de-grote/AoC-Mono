@@ -3,16 +3,21 @@
 #include <iostream>
 
 #include "day01/day01.h"
+#include "day02/day02.h"
 
 int main(int argc, char **argv) {
-    auto file = std::ifstream("day01/input.txt");
-
-    int day = 0;
-    int part = 1;
+    int day = 2;
+    int part = 2;
     if (argc >= 3) {
         day = std::atoi(argv[1]);
         part = std::atoi(argv[2]);
     }
+
+    std::string filename = "day";
+    if (day <= 9) filename.push_back('0');
+    filename.append(std::to_string(day));
+    filename.append("/input.txt");
+    auto file = std::ifstream(filename);
 
     switch (day) {
         case 1:
@@ -22,10 +27,17 @@ int main(int argc, char **argv) {
                 std::cout << day01::part2(file);
             }
             break;
+        case 2:
+            if (part == 1) {
+                std::cout << day02::part1(file);
+            } else {
+                std::cout << day02::part2(file);
+            }
+        break;
         default:
-            day = 1;
-            part = 2;
-            std::cout << day01::part2(file);
+            day = 2;
+            part = 1;
+            std::cout << day02::part1(file);
             break;
     }
     std::cout << "\nsolved day " << day << " part " << part << std::endl;
