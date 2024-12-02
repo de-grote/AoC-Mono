@@ -40,6 +40,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 1: I accidentally pasted some code into the testcase which caused the parser to give a partial result, which lost me a lot of time today. Skill issue.
 
+* day 2: I spend way too long trying some clever solution, and then I brute forced it and it worked.
+
 ---
 
 Thanks for reading!
