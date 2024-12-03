@@ -42,6 +42,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 2: I spend way too long trying some clever solution, and then I brute forced it and it worked.
 
+* day 3: Should've just added regex tbh, recursive parsers are also *something* I guess.
+
 ---
 
 Thanks for reading!
