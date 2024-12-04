@@ -1,4 +1,5 @@
 use glam::IVec2;
+use itertools::Itertools;
 use std::error::Error;
 
 /// Answer type for solutions
@@ -83,5 +84,51 @@ impl Direction {
             Direction::Down => IVec2::Y,
             Direction::Left => IVec2::NEG_X,
         }
+    }
+}
+
+pub trait Grid<T> {
+    /// Return the item at a specified 2d location
+    fn at<Q: num::ToPrimitive>(&self, pos: impl Into<(Q, Q)>) -> Option<&T>;
+    /// Returns width and heigth (in that order)
+    fn size(&self) -> (usize, usize);
+    /// An iterator over all the rows as iterator
+    fn rows<'a>(&'a self) -> impl Iterator<Item = impl Iterator<Item = &T>>
+    where
+        T: 'a,
+    {
+        let (_, y) = self.size();
+        (0..y).map(move |y2| (0..).map_while(move |x2| self.at((x2, y2))))
+    }
+    /// An iterator over all the columns as iterator
+    fn columns<'a>(&'a self) -> impl Iterator<Item = impl Iterator<Item = &T>>
+    where
+        T: 'a,
+    {
+        let (x, _) = self.size();
+        (0..x).map(move |x2| (0..).map_while(move |y2| self.at((x2, y2))))
+    }
+    /// Transposes the array, clones every value
+    fn transpose(&self) -> Vec<Vec<T>>
+    where
+        T: Clone,
+    {
+        self.columns()
+            .map(|x| x.cloned().collect_vec())
+            .collect_vec()
+    }
+}
+
+impl<T, A: AsRef<[T]>> Grid<T> for [A] {
+    fn at<Q: num::ToPrimitive>(&self, pos: impl Into<(Q, Q)>) -> Option<&T> {
+        let (x, y) = pos.into();
+        self.get(y.to_usize()?)?.as_ref().get(x.to_usize()?)
+    }
+
+    fn size(&self) -> (usize, usize) {
+        (
+            self.get(0).map_or(0, |inner| inner.as_ref().len()),
+            self.len(),
+        )
     }
 }

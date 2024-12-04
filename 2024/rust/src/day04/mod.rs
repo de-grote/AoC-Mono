@@ -11,10 +11,10 @@ pub fn part1(input: &str) -> Answer {
                     y: y as i32,
                 };
                 if let (Some('X'), Some('M'), Some('A'), Some('S')) = (
-                    get_pos(&grid, pos),
-                    get_pos(&grid, pos + dp),
-                    get_pos(&grid, pos + dp * 2),
-                    get_pos(&grid, pos + dp * 3),
+                    grid.at(pos),
+                    grid.at(pos + dp),
+                    grid.at(pos + dp * 2),
+                    grid.at(pos + dp * 3),
                 ) {
                     res += 1;
                 }
@@ -23,11 +23,6 @@ pub fn part1(input: &str) -> Answer {
     }
 
     Ok(res.to_string())
-}
-
-fn get_pos(v: &[Vec<char>], pos: IVec2) -> Option<char> {
-    v.get(pos.y as usize)
-        .and_then(|y2| y2.get(pos.x as usize).copied())
 }
 
 pub fn part2(input: &str) -> Answer {
@@ -41,11 +36,11 @@ pub fn part2(input: &str) -> Answer {
                     y: y as i32,
                 };
                 let matches = (
-                    get_pos(&grid, pos),
-                    get_pos(&grid, pos + dp),
-                    get_pos(&grid, pos + dp.with_y(-dp.y)),
-                    get_pos(&grid, pos + dp.with_x(-dp.x)),
-                    get_pos(&grid, pos - dp),
+                    grid.at(pos),
+                    grid.at(pos + dp),
+                    grid.at(pos + dp.with_y(-dp.y)),
+                    grid.at(pos + dp.with_x(-dp.x)),
+                    grid.at(pos - dp),
                 );
                 if let (Some('A'), Some('S'), Some('M'), Some('S'), Some('M')) = matches {
                     res += 1;
