@@ -127,8 +127,23 @@ impl<T, A: AsRef<[T]>> Grid<T> for [A] {
 
     fn size(&self) -> (usize, usize) {
         (
-            self.get(0).map_or(0, |inner| inner.as_ref().len()),
+            self.first().map_or(0, |inner| inner.as_ref().len()),
             self.len(),
         )
+    }
+}
+
+pub trait MutableGrid<T>
+where
+    Self: Grid<T>,
+{
+    /// Return a mutable reference to the item at a specified 2d location
+    fn at_mut<Q: num::ToPrimitive>(&mut self, pos: impl Into<(Q, Q)>) -> Option<&mut T>;
+}
+
+impl<T, A: AsMut<[T]> + AsRef<[T]>> MutableGrid<T> for [A] {
+    fn at_mut<Q: num::ToPrimitive>(&mut self, pos: impl Into<(Q, Q)>) -> Option<&mut T> {
+        let (x, y) = pos.into();
+        self.get_mut(y.to_usize()?)?.as_mut().get_mut(x.to_usize()?)
     }
 }
