@@ -28,6 +28,16 @@ pub fn orthogonal_points(point: IVec2) -> [IVec2; 4] {
     ]
 }
 
+/// Get the 4 points diagnonal to the given point
+pub fn diagonal_points(point: IVec2) -> [IVec2; 4] {
+    [
+        point + IVec2::new(-1, -1),
+        point + IVec2::new(-1, 1),
+        point + IVec2::new(1, -1),
+        point + IVec2::new(1, 1),
+    ]
+}
+
 /// Represents a orthogonal direction
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub enum Direction {

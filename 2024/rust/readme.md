@@ -44,6 +44,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 3: Should've just added regex tbh, recursive parsers are also *something* I guess.
 
+* day 4: I love pattern matching.
+
 ---
 
 Thanks for reading!
