@@ -9,4 +9,6 @@ This might just become a trial ground for me trying programming languages idk.
 
 Instructions on how to run differ wildly but can be found in the relevant readme.
 
+input.txt is often next to the file which contains the code to run that day.
+
 More serious readme soon maybe.
