@@ -46,6 +46,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 4: I love pattern matching.
 
+* day 5: Today I'm grateful sorting is trivial to do in rust.
+
 ---
 
 Thanks for reading!
