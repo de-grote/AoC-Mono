@@ -5,7 +5,7 @@
 #include <vector>
 #include <ranges>
 
-#include "Utils.h"
+#include "../Utils.h"
 
 class day02 {
 public:
