@@ -48,6 +48,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 5: Today I'm grateful sorting is trivial to do in rust.
 
+* day 6: Run this one on release mode if you value your time.
+
 ---
 
 Thanks for reading!

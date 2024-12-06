@@ -20,6 +20,7 @@ pub mod day02;
 pub mod day03;
 pub mod day04;
 pub mod day05;
+pub mod day06;
 
 macro_rules! solution {
     ($day:ident, $part:ident) => {{
@@ -89,6 +90,8 @@ fn get_solution(day: u8, part: u8) -> (String, Duration) {
         (4, 2) => solution!(day04, part2),
         (5, 1) => solution!(day05, part1),
         (5, 2) => solution!(day05, part2),
+        (6, 1) => solution!(day06, part1),
+        (6, 2) => solution!(day06, part2),
 
         _ => (
             "This day is not solved by me yet".to_string(),
