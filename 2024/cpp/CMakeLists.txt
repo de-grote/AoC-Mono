@@ -8,4 +8,5 @@ add_executable(cpp main.cpp
         Utils.h
         day02/day02.h
         day03/day03.h
+        day04/day04.h
 )

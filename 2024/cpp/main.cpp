@@ -4,9 +4,10 @@
 #include "day01/day01.h"
 #include "day02/day02.h"
 #include "day03/day03.h"
+#include "day04/day04.h"
 
 int main(const int argc, char **argv) {
-    int day = 3;
+    int day = 4;
     int part = 2;
     if (argc >= 3) {
         day = std::atoi(argv[1]);
@@ -33,13 +34,21 @@ int main(const int argc, char **argv) {
             } else {
                 std::cout << day02::part2(file);
             }
+            break;
         case 3:
             if (part == 1) {
                 std::cout << day03::part1(file);
             } else {
                 std::cout << day03::part2(file);
             }
-        break;
+            break;
+        case 4:
+            if (part == 1) {
+                std::cout << day04::part1(file);
+            } else {
+                std::cout << day04::part2(file);
+            }
+            break;
         default:
             day = 2;
             part = 1;
