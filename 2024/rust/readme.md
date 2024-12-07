@@ -50,6 +50,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 6: Run this one on release mode if you value your time.
 
+* day 7: Easiest day so far if you know recursion.
+
 ---
 
 Thanks for reading!
