@@ -1,3 +1,5 @@
+#![allow(clippy::type_complexity)]
+
 use chrono::Datelike;
 use clap::{Parser, Subcommand};
 use itertools::Itertools;

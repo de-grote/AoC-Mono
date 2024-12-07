@@ -13,6 +13,9 @@ pub fn part1(input: &str) -> Answer {
 }
 
 fn is_valid(test: u64, current: u64, rest: &[u64]) -> bool {
+    if current > test {
+        return false;
+    }
     if rest.is_empty() {
         return test == current;
     }
@@ -32,15 +35,19 @@ pub fn part2(input: &str) -> Answer {
 }
 
 fn is_valid2(test: u64, current: u64, rest: &[u64]) -> bool {
+    if current > test {
+        return false;
+    }
     if rest.is_empty() {
         return test == current;
     }
     is_valid2(test, current + rest[0], &rest[1..])
         || is_valid2(test, current * rest[0], &rest[1..])
         || {
-            let st = rest[0].to_string().len() as u32;
-            // let b = current.to_string() + &rest[0].to_string();
-            is_valid2(test, current * 10u64.pow(st) + rest[0], &rest[1..])
+            // let string_concat: u64 = (current.to_string() + &rest[0].to_string()).parse().unwrap();
+            // let string_size = current * 10u64.pow(rest[0].to_string().len() as u32) + rest[0];
+            let math_size = current * 10u64.pow(rest[0].ilog10() + 1) + rest[0];
+            is_valid2(test, math_size, &rest[1..])
         }
 }
 
