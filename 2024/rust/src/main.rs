@@ -35,8 +35,7 @@ macro_rules! solution {
         .unwrap();
         let start = Instant::now();
         let result = $day::$part(&input).unwrap();
-        let end = Instant::now();
-        (result, end - start)
+        (result, start.elapsed())
     }};
 }
 
@@ -62,8 +61,25 @@ fn main() {
         Commands::FetchInput => {
             let start = Instant::now();
             fetch_input(day);
-            let end = Instant::now();
-            (format!("downloaded the file for day {}", day), end - start)
+            (
+                format!("downloaded the input file for day {}", day),
+                start.elapsed(),
+            )
+        }
+        Commands::FetchAllInput => {
+            let start = Instant::now();
+            let days = fetch_all_input(day);
+            (
+                if days.is_empty() {
+                    "downloaded no input files".to_string()
+                } else {
+                    format!(
+                        "downloaded the input files for days: {}",
+                        days.into_iter().join(" ")
+                    )
+                },
+                start.elapsed(),
+            )
         }
     };
 
@@ -154,6 +170,17 @@ fn day_to_string(day: u8) -> String {
     }
 }
 
+fn fetch_all_input(last_day: u8) -> Vec<u8> {
+    let mut res = Vec::new();
+    for day in 1..=last_day {
+        if let Ok(false) = fs::exists(format!("src/day{}/input.txt", day_to_string(day))) {
+            res.push(day);
+            fetch_input(day);
+        }
+    }
+    res
+}
+
 /// aoc 2024 cli
 #[derive(Parser, Debug)]
 #[command(name = "aoc2024", author, version, long_about = None, subcommand_required = false)]
@@ -169,10 +196,12 @@ struct Cli {
 #[derive(Debug, Subcommand, Default)]
 enum Commands {
     #[default]
-    /// solve a day
+    /// Solve a day
     Solve,
-    /// fetch input and load it in
-    FetchInput,
-    /// solve all days
+    /// Solve all days
     All,
+    /// Fetch input and load it in, does replace existing files
+    FetchInput,
+    /// Fetch all inputs until the specified day and load it in, does not replace existing files
+    FetchAllInput,
 }

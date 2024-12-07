@@ -20,6 +20,8 @@ When day isn't specified or 0 it will default to the current day of the month bu
 
 Use ``cargo run -- -d1 fetch-input`` to get the input and load it in the correct place.
 
+Use ``cargo run -- -d1 fetch-all-input`` to get the inputs for all days up until the specified day which aren't already downloaded.
+
 To use fetch input you must have a `.env` file in the root folder containing a session token, you can get one by searching through the requests under the network tab in your browser (I don't know about a better method).
 
 ```env
