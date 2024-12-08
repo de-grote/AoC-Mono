@@ -93,7 +93,7 @@ pub trait Grid<T> {
     /// Returns width and heigth (in that order)
     fn size(&self) -> (usize, usize);
     /// An iterator over all the rows as iterator
-    fn rows<'a>(&'a self) -> impl Iterator<Item = impl Iterator<Item = &T>>
+    fn rows<'a>(&'a self) -> impl Iterator<Item = impl Iterator<Item = &'a T>>
     where
         T: 'a,
     {
@@ -101,7 +101,7 @@ pub trait Grid<T> {
         (0..y).map(move |y2| (0..).map_while(move |x2| self.at((x2, y2))))
     }
     /// An iterator over all the columns as iterator
-    fn columns<'a>(&'a self) -> impl Iterator<Item = impl Iterator<Item = &T>>
+    fn columns<'a>(&'a self) -> impl Iterator<Item = impl Iterator<Item = &'a T>>
     where
         T: 'a,
     {
