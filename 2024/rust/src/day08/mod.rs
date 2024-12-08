@@ -73,6 +73,5 @@ pub fn part2(input: &str) -> Answer {
 }
 
 fn parse(input: &str) -> IResult<&str, Vec<Vec<char>>> {
-    // separated_list1(line_ending, many1(many_m_n(1, 1, anychar).map(|v| v[0])))(input)
-    Ok(("", input.lines().map(|l| l.chars().collect()).collect()))
+    separated_list1(line_ending, many1(satisfy(|x| !x.is_whitespace())))(input)
 }
