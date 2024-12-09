@@ -54,6 +54,10 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 7: Easiest day so far if you know recursion.
 
+* day 8: I still don't know what people were cooking with gcd today.
+
+* day 9: Part 2 is so much more difficult than part 1.
+
 ---
 
 Thanks for reading!
