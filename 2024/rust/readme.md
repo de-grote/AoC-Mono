@@ -58,6 +58,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 9: Part 2 is so much more difficult than part 1.
 
+* day 10: Easier than it looked like I'd be.
+
 ---
 
 Thanks for reading!
