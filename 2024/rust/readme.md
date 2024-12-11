@@ -60,6 +60,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 10: Easier than it looked like I'd be.
 
+* day 11: Slept through my alart, rip competitive time.
+
 ---
 
 Thanks for reading!
