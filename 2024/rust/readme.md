@@ -60,7 +60,9 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 10: Easier than it looked like I'd be.
 
-* day 11: Slept through my alart, rip competitive time.
+* day 11: Slept through my alarm, rip competitive time.
+
+* day 12: Didn't sleep through my alarm, got 689th for part 2.
 
 ---
 
