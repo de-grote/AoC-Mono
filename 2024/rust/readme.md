@@ -64,6 +64,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 12: Didn't sleep through my alarm, got 689th for part 2.
 
+* day 13: Linear algebra and floats are scary.
+
 ---
 
 Thanks for reading!
