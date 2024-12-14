@@ -4,8 +4,11 @@ use crate::prelude::*;
 
 pub fn part1(input: &str) -> Answer {
     let (_, robots) = parse(input)?;
-    // let size = IVec2::new(11, 7);
-    let size = IVec2::new(101, 103);
+    let size = if cfg!(test) {
+        IVec2::new(11, 7)
+    } else {
+        IVec2::new(101, 103)
+    };
     let half_size = size / 2;
     let mut corners = [0; 4];
     for (pos, vel) in robots {
