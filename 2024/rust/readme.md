@@ -66,6 +66,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 13: Linear algebra and floats are scary.
 
+* day 14: Press y if you see a christmas tree, you're the algorithm now!
+
 ---
 
 Thanks for reading!
