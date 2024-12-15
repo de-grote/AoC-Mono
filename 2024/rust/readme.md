@@ -68,6 +68,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 14: Press y if you see a christmas tree, you're the algorithm now!
 
+* day 15: Now I can finally say I've made sokoban.
+
 ---
 
 Thanks for reading!
