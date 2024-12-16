@@ -70,6 +70,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 15: Now I can finally say I've made sokoban.
 
+* day 16: First time implementing Dijkstra this year, should've seen it coming.
+
 ---
 
 Thanks for reading!

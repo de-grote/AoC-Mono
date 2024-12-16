@@ -14,4 +14,5 @@ pub use num::{
     integer::{gcd, lcm},
     ToPrimitive,
 };
+pub use std::cmp::Ordering;
 pub use std::collections::{BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, VecDeque};
