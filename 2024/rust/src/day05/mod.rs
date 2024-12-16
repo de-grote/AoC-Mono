@@ -1,5 +1,3 @@
-use std::cmp::Ordering;
-
 use crate::prelude::*;
 
 pub fn part1(input: &str) -> Answer {
