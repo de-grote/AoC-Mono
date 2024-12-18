@@ -72,7 +72,7 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 16: First time implementing Dijkstra this year, should've seen it coming.
 
-* day 17: Delta time of 14 hours, I'm so good, also it's hardcoded, but this took long enough.
+* day 17: Delta time of 14 hours, I'm so good. Also it was hardcoded, but I fixed it later.
 
 * day 18: Easy puzzle for my birthday, also I know I could optimise part 2, but it's fine.
 

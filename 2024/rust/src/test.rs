@@ -173,7 +173,12 @@ gen_test!(
     "36",
     "81"
 );
-gen_test!(day11, "125 17", "55312");
+gen_test!(
+    day11,
+    "125 17",
+    "55312",
+    "65601038650482" // this isn't given
+);
 gen_test!(
     day12,
     "RRRRIICCFF
@@ -278,12 +283,13 @@ Register B: 0
 Register C: 0
 
 Program: 0,1,5,4,3,0",
-    //     "Register A: 2024
-    // Register B: 0
-    // Register C: 0
+    "Register A: 2024
+Register B: 0
+Register C: 0
 
-    // Program: 0,3,5,4,3,0",
-    "4,6,3,5,6,3,5,2,1,0" // , "117440"
+Program: 0,3,5,4,3,0",
+    "4,6,3,5,6,3,5,2,1,0",
+    "117440"
 );
 gen_test!(
     day18,

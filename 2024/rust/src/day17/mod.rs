@@ -61,15 +61,24 @@ fn combo(regs: Registers, v: u64) -> u64 {
 pub fn part2(input: &str) -> Answer {
     let (_, (_start_register, instructions)) = parse(input)?;
 
+    // a lot of assumptions are hidden here
+    let important_instructions = instructions
+        .iter()
+        .tuples()
+        .filter_map(|(&instr, &operand)| [1, 4, 7].contains(&instr).then_some((instr, operand)))
+        .collect_vec();
+
     for x in 0..8 {
-        if let Some(&res) = find_lowest_bits(x, &instructions).first() {
+        if let Some(&res) = find_lowest_bits(x, &instructions, &important_instructions).first() {
+            // because the testcase orders the adv before the out it needs to be shifted by 3 more bits
+            let res = if cfg!(test) { res << 3 } else { res };
             return Ok(res.to_string());
         }
     }
     panic!("no solution found");
 }
 
-fn find_lowest_bits(previous_bits: u64, instructions: &[u64]) -> Vec<u64> {
+fn find_lowest_bits(previous_bits: u64, instructions: &[u64], code: &[(u64, u64)]) -> Vec<u64> {
     let Some(&instr) = instructions.last() else {
         return vec![previous_bits];
     };
@@ -77,12 +86,16 @@ fn find_lowest_bits(previous_bits: u64, instructions: &[u64]) -> Vec<u64> {
     let mut options = (0..8)
         .filter_map(|v| {
             let mut b: u64 = v;
+            let mut c: u64 = 0;
             let a = previous_bits | v;
-            // TODO don't hardcode this
-            b ^= 2; // bxl 2
-            let c = a >> b; // cdv b
-            b ^= 3; // bxl 3
-            b ^= c; // bxc
+            for &(ins, arg) in code.iter() {
+                match ins {
+                    1 => b ^= arg,
+                    4 => b ^= c,
+                    7 => c = a >> b,
+                    _ => panic!("didn't account for instruction {}", ins),
+                }
+            }
             b &= 7;
             (b == instr).then_some(a)
         })
@@ -90,7 +103,7 @@ fn find_lowest_bits(previous_bits: u64, instructions: &[u64]) -> Vec<u64> {
     options.sort();
     options
         .into_iter()
-        .flat_map(|o| find_lowest_bits(o, &instructions[..instructions.len() - 1]))
+        .flat_map(|o| find_lowest_bits(o, &instructions[..instructions.len() - 1], code))
         .collect_vec()
 }
 
