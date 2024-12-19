@@ -321,3 +321,18 @@ gen_test!(
     "22",
     "6,1"
 );
+gen_test!(
+    day19,
+    "r, wr, b, g, bwu, rb, gb, br
+
+brwrr
+bggr
+gbbr
+rrbgbr
+ubwu
+bwurrg
+brgr
+bbrgwb",
+    "6",
+    "16"
+);

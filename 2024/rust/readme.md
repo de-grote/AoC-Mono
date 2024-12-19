@@ -76,6 +76,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 18: Easy puzzle for my birthday, also I know I could optimise part 2, but it's fine.
 
+* day 19: I really liked todays puzzle, even though it was kind of generic.
+
 ---
 
 Thanks for reading!
