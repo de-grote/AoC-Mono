@@ -78,6 +78,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 19: I really liked todays puzzle, even though it was kind of generic.
 
+* day 20: I got the right idea instantly, just spend way too much time debugging when I didn't had to.
+
 ---
 
 Thanks for reading!
