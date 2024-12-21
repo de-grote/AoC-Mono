@@ -80,6 +80,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 20: I got the right idea instantly, just spend way too much time debugging when I didn't had to.
 
+* day 21: I procrastinated a lot on starting today, for good reasons.
+
 ---
 
 Thanks for reading!
