@@ -82,6 +82,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 21: I procrastinated a lot on starting today, for good reasons.
 
+* day 22: Brute force finally actually worked!
+
 ---
 
 Thanks for reading!
