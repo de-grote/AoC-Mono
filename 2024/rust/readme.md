@@ -84,6 +84,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 22: Brute force finally actually worked!
 
+* day 23: Who would have guessed cloning a set a bajillion times would be slow.
+
 ---
 
 Thanks for reading!
