@@ -86,6 +86,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 23: Who would have guessed cloning a set a bajillion times would be slow.
 
+* day 24: Half of the file is just a commented out mess, and p2 doesn't even return the right answer.
+
 ---
 
 Thanks for reading!

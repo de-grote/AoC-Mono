@@ -1,0 +1,28 @@
+XOR: 89
+AND: 89
+OR: 44
+
+z00 = x00 ^ y00
+          ppj          mtd
+z01 = (x00 & y00) ^ (x01 ^ y01)
+       wjg:  dsm | jrp              jpq
+z02 = (x01 & x01 | mtd & ppj) ^ (x02 ^ y02)
+
+WRONG: chd,fvw,mdb,nwq,vmq,wjv
+WRONG: nwq,mdb,fvw,wjv,chd,z18
+WRONG: chd,fvw,mdb,nwq,wjv,z18
+
+SUS: chd,fvw,mdb,nwq,wjv
+SUS: 
+z18 is OR sb XOR
+z22 is AND sb XOR
+z36 is AND sb XOR
+nwq is XOR sb AND
+grf is XOR sb AND // niet z
+mdb is XOR sb AND
+wpq is AND sb XOR
+fvw is XOR sb OR ?
+
+COUT 18
+ndj = XMain 19
+fvw = Cout 18
