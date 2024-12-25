@@ -41,6 +41,7 @@ pub mod day21;
 pub mod day22;
 pub mod day23;
 pub mod day24;
+pub mod day25;
 
 macro_rules! solution {
     ($day:ident, $part:ident) => {{
@@ -164,6 +165,7 @@ fn get_solution(day: u8, part: u8) -> (String, Duration) {
         (23, 2) => solution!(day23, part2),
         (24, 1) => solution!(day24, part1),
         (24, 2) => solution!(day24, part2),
+        (25, 1) => solution!(day25, part1),
 
         _ => (
             "This day is not solved by me yet".to_string(),
@@ -176,8 +178,9 @@ fn run_all() -> (String, Duration) {
     let mut time = Duration::ZERO;
     let mut last_day = None;
     for (day, part) in (1..=25).cartesian_product(1..=2) {
-        if (day, part) == (14, 2) {
+        if [(14, 2), (25, 2)].contains(&(day, part)) {
             // d14p2 is excluded from benchmarks since it requires human interaction
+            // d25p2 is excluded since it doesn't exist
             continue;
         }
         let t = get_solution(day, part).1;

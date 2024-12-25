@@ -88,6 +88,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 24: Half of the file is just a commented out mess, and p2 doesn't even return the right answer.
 
+* day 25: A relatively easy problem to end of the year.
+
 ---
 
 Thanks for reading!
