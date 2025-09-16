@@ -60,7 +60,7 @@ executable aoc2015
                       containers ^>=0.7, 
                       mtl ^>=2.3.1
 
-    other-modules:    Day01.Day01 Day02.Day02 Day03.Day03 Day04.Day04 Day05.Day05 Day06.Day06 Day07.Day07 Day08.Day08
+    other-modules:    Day01.Day01 Day02.Day02 Day03.Day03 Day04.Day04 Day05.Day05 Day06.Day06 Day07.Day07 Day08.Day08 Day09.Day09
 
     -- Directories containing source files.
     hs-source-dirs:   app
