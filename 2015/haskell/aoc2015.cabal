@@ -56,7 +56,7 @@ executable aoc2015
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.0.0, 
+    build-depends:    base >=4.18.3.0, 
                       containers ^>=0.7, 
                       mtl ^>=2.3.1
 
