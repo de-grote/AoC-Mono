@@ -28,8 +28,9 @@ macro_rules! solution {
         )
         .unwrap();
         let start = Instant::now();
-        let result = $day::$part(&input).unwrap().to_string();
-        (result, start.elapsed())
+        let result = $day::$part(&input);
+        let time = start.elapsed();
+        (result.unwrap().to_string(), time)
     }};
 }
 
@@ -130,7 +131,7 @@ fn run_all() -> (String, Duration) {
 
 fn fetch_input(day: u8) {
     let session = std::env::var("SESSION").expect("no session token in env");
-    let buf = ureq::get(&format!("https://adventofcode.com/2024/day/{day}/input"))
+    let buf = ureq::get(&format!("https://adventofcode.com/2025/day/{day}/input"))
         .header("Cookie", &format!("session={}", session))
         .call()
         .expect("couldn't reach aoc server")

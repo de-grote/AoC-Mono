@@ -40,7 +40,7 @@ this does require the [bacon](https://crates.io/crates/bacon) crate.
 
 A bit of text describing my experience with creating a solution for a specific day.
 
-* day 0: Placeholder
+* day 1: It's only the first day and I already have to debug a wrong solution with a correct test.
 
 ---
 
