@@ -19,6 +19,7 @@ mod test;
 // TODO update daily
 pub mod day01;
 pub mod day02;
+pub mod day03;
 
 macro_rules! solution {
     ($day:ident, $part:ident) => {{
@@ -101,6 +102,8 @@ fn get_solution(day: u8, part: u8) -> (String, Duration) {
         (1, 2) => solution!(day01, part2),
         (2, 1) => solution!(day02, part1),
         (2, 2) => solution!(day02, part2),
+        (3, 1) => solution!(day03, part1),
+        (3, 2) => solution!(day03, part2),
 
         _ => (
             "This day is not solved by me yet".to_string(),

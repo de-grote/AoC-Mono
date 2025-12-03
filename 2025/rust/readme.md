@@ -44,6 +44,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 2: I feel like there is a really smart solution for today, too bad I didn't find it.
 
+* day 3: Today I did find the smart solution, yay!
+
 ---
 
 Thanks for reading!
