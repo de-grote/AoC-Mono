@@ -46,6 +46,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 3: Today I did find the smart solution, yay!
 
+* day 4: Good thing I have the exact right utility functions for this.
+
 ---
 
 Thanks for reading!
