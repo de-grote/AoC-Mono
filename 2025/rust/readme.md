@@ -48,6 +48,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 4: Good thing I have the exact right utility functions for this.
 
+* day 5: It really feels like it's getting easier, let's see how long that feeling lasts.
+
 ---
 
 Thanks for reading!
