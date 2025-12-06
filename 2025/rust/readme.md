@@ -50,6 +50,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 5: It really feels like it's getting easier, let's see how long that feeling lasts.
 
+* day 6: Today felt like a parsing problem, and at part 2 I gave up on parsing correctly.
+
 ---
 
 Thanks for reading!
