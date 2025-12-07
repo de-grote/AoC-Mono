@@ -52,6 +52,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 6: Today felt like a parsing problem, and at part 2 I gave up on parsing correctly.
 
+* day 7: We're over halfway done with the problems, but they seem to still be easier than last year.
+
 ---
 
 Thanks for reading!
