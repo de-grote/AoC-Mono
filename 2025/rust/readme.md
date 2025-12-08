@@ -54,6 +54,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 7: We're over halfway done with the problems, but they seem to still be easier than last year.
 
+* day 8: I didn't feel like implementing union-find or nlogn sorting so my solution is pretty slow.
+
 ---
 
 Thanks for reading!
