@@ -56,6 +56,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 8: I didn't feel like implementing union-find or nlogn sorting so my solution is pretty slow.
 
+* day 9: It took me so long to get the correct comparisons, never again.
+
 ---
 
 Thanks for reading!
