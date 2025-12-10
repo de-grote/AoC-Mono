@@ -11,6 +11,7 @@ chrono = "0.4.42"
 clap = { version = "4.5.53", features = ["derive"] }
 dotenvy = "0.15.7"
 glam = "0.30.9"
+good_lp = { version = "1.14.2", features = ["microlp"], default-features = false }
 itertools = "0.14.0"
 nom = "8.0.0"
 num = "0.4.3"
