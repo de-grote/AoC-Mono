@@ -58,7 +58,9 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 9: It took me so long to get the correct comparisons, never again.
 
-* day 10: I first solved part 2 with gerobi in C# but rewrote it in rust.
+* day 10: I first solved part 2 with gurobi in C# but rewrote it in rust.
+
+* day 11: "Today I will get a good time"; didn't happen.
 
 ---
 
