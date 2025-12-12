@@ -16,3 +16,6 @@ itertools = "0.14.0"
 nom = "8.0.0"
 num = "0.4.3"
 ureq = "3.1.4"
+
+[features]
+day12_ilp = ["good_lp/highs"]

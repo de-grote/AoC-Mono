@@ -28,6 +28,7 @@ pub mod day08;
 pub mod day09;
 pub mod day10;
 pub mod day11;
+pub mod day12;
 
 macro_rules! solution {
     ($day:ident, $part:ident) => {{
@@ -128,6 +129,8 @@ fn get_solution(day: u8, part: u8) -> (String, Duration) {
         (10, 2) => solution!(day10, part2),
         (11, 1) => solution!(day11, part1),
         (11, 2) => solution!(day11, part2),
+        (12, 1) => solution!(day12, part1),
+        (12, 2) => panic!("invalid format: day or part number invalid"),
 
         _ => (
             "This day is not solved by me yet".to_string(),
@@ -139,7 +142,7 @@ fn get_solution(day: u8, part: u8) -> (String, Duration) {
 fn run_all() -> (String, Duration) {
     let mut time = Duration::ZERO;
     let mut last_day = None;
-    for (day, part) in (1..=12).cartesian_product(1..=2) {
+    for (day, part) in (1..=11).cartesian_product(1..=2).chain([(12, 1)]) {
         let t = get_solution(day, part).1;
         if t.is_zero() {
             last_day.get_or_insert(day);

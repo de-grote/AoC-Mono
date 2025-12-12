@@ -62,6 +62,8 @@ A bit of text describing my experience with creating a solution for a specific d
 
 * day 11: "Today I will get a good time"; didn't happen.
 
+* day 12: I spend 5 hours running my code only to realise the input makes the problem trivial.
+
 ---
 
 Thanks for reading!
